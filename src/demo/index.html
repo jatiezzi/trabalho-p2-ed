@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de Heap — Min/Max</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Heap binário passo a passo</h1>
+    <label>Tipo
+      <select id="tipo"><option value="min">Min-Heap</option><option value="max">Max-Heap</option></select>
+    </label>
+  </header>
+
+  <section class="controles" aria-label="Controles">
+    <button id="play">Executar</button>
+    <button id="pause">Pausar</button>
+    <button id="step">Próximo passo</button>
+    <button id="reset">Reiniciar</button>
+    <span class="sep"></span>
+    <button id="medio">Caso médio</button>
+    <button id="pior">Pior caso</button>
+  </section>
+
+  <section class="controles" aria-label="Operações">
+    <input id="valor" type="number" placeholder="Valor" aria-label="Valor">
+    <button id="inserir">Inserir</button>
+    <button id="extrair">Extrair raiz</button>
+    <input id="lista" type="text" placeholder="Customizado: 9, 4, 7, 1" aria-label="Lista customizada">
+    <button id="custom">Carregar lista</button>
+  </section>
+
+  <main>
+    <section class="painel">
+      <h2>Árvore binária completa</h2>
+      <svg id="arvore" viewBox="0 0 640 300" role="img" aria-label="Árvore do heap"></svg>
+    </section>
+    <section class="painel">
+      <h2>Array subjacente</h2>
+      <div id="array" class="array"></div>
+      <p class="formula">pai = (i−1)//2 &nbsp; esq = 2i+1 &nbsp; dir = 2i+2</p>
+    </section>
+    <section class="painel metricas">
+      <div><b id="mCmp">0</b> comparações</div>
+      <div><b id="mSwp">0</b> trocas</div>
+      <div><b id="mTam">0</b> elementos</div>
+      <div><b id="mPasso">0/0</b> passo</div>
+    </section>
+    <section class="painel">
+      <h2>Log do passo</h2>
+      <p id="log" aria-live="polite">Insira valores ou carregue um cenário.</p>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

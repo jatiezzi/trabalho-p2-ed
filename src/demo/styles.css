@@ -1,0 +1,36 @@
+:root {
+  --bg: #eef2f6; --card: #fff; --ink: #1d2733; --mute: #5d6b7a; --line: #c9d3de;
+  --acc: #2b5fd9; --cmp: #f2b632; --swp: #e0533d; --ok: #2f9e6e;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; max-width: 980px; margin-inline: auto; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+h1 { font-size: 1.6rem; margin: 0; }
+h2 { font-size: 1rem; margin: 0 0 8px; color: var(--mute); font-weight: 600; }
+.controles { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.sep { width: 1px; height: 24px; background: var(--line); }
+button, select, input { font: inherit; padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); }
+input[type=number] { width: 90px; } input[type=text] { width: 200px; }
+button { cursor: pointer; }
+button:hover { border-color: var(--acc); }
+#play { background: var(--acc); color: #fff; border-color: var(--acc); }
+:focus-visible { outline: 3px solid var(--cmp); outline-offset: 2px; }
+main { display: grid; gap: 12px; }
+.painel { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+svg { width: 100%; height: auto; display: block; }
+.aresta { stroke: var(--line); stroke-width: 2; }
+.no circle { fill: var(--card); stroke: var(--ink); stroke-width: 2; transition: fill .25s, stroke .25s; }
+.no text { text-anchor: middle; dominant-baseline: central; font-weight: 700; font-size: 15px; fill: var(--ink); }
+.no .idx { font-size: 10px; font-weight: 400; fill: var(--mute); }
+.no.cmp circle { fill: var(--cmp); } .no.swp circle { fill: var(--swp); } .no.ok circle { fill: var(--ok); }
+.no.swp text, .no.ok text { fill: #fff; }
+.array { display: flex; gap: 4px; flex-wrap: wrap; min-height: 56px; }
+.cell { min-width: 46px; text-align: center; border: 2px solid var(--ink); border-radius: 6px; padding: 4px 0 2px; transition: background .25s; }
+.cell small { display: block; font: 11px ui-monospace, monospace; color: var(--mute); border-top: 1px solid var(--line); margin-top: 2px; }
+.cell.cmp { background: var(--cmp); } .cell.swp { background: var(--swp); color: #fff; } .cell.ok { background: var(--ok); color: #fff; }
+.cell.swp small, .cell.ok small { color: #fff; }
+.formula { margin: 8px 0 0; font: 13px ui-monospace, monospace; color: var(--mute); }
+.metricas { display: flex; gap: 24px; flex-wrap: wrap; }
+.metricas b { font-size: 1.4rem; margin-right: 4px; }
+#log { margin: 0; min-height: 3em; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
